@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JQuery05</title>
+  <!-- Importación de jquery 3.5.1-->
+  <script src="js/lib/jquery-3.5.1.min.js"></script>
+  <!-- Importación de Boostrap 5-->
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+  <!--Estilo propio-->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<div class="container">
+  <h1>Ejemplo 5 - Elemento dinamico</h1>
+  <hr>
+  <h3>Click aquí!!</h3>
+
+
+
+</div>
+
+<script>
+//Función anonima
+(function(){
+  var contador=0;
+
+  $("body").on("click","h3", function(){
+    contador=contador+1;
+    var h3Dinamico="<h3 id='h3-"+contador+"'>NETFLIX: "+contador+"</h3>";
+    $(".container").append(h3Dinamico);
+
+    if(contador===3){
+      $("#h3-2").bind("click",function(){
+      console.log("Funcion dinamica");
+    });
+    }
+
+
+  });
+
+
+
+})();
+
+
+</script>
+
+
+</body>
+</html>
